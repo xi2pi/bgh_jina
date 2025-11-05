@@ -1,0 +1,7 @@
+gradio
+chromadb
+langchain-chroma
+langchain-community
+sentence-transformers
+huggingface-hub
+einops
