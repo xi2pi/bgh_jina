@@ -100,4 +100,7 @@ with gr.Blocks(title="Semantische Suchmaschine für BGH Leitsatzentscheidungen v
     out = gr.Markdown()
     gr.Button("Search").click(fn=search, inputs=[q, k], outputs=[out])
 
-demo.launch()
+demo.launch(
+    server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860))
+)
