@@ -1,7 +1,5 @@
-gradio
+fastapi
+uvicorn
 chromadb
-langchain-chroma
-langchain-community
 sentence-transformers
-huggingface-hub
-einops
+numpy
