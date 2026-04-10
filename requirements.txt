@@ -1,5 +1,6 @@
-fastapi
-uvicorn
-chromadb
-sentence-transformers
-numpy
+chromadb==1.3.3
+langchain-chroma==0.2.5
+langchain-community==0.3.31
+huggingface-hub==0.36.0
+einops==0.8.1
+sentence-transformers>=3.1.0
