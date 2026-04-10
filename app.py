@@ -11,6 +11,16 @@ from chromadb.config import Settings
 from langchain_chroma import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
+from huggingface_hub import snapshot_download
+
+if not os.path.exists(PERSIST_DIR) or not os.listdir(PERSIST_DIR):
+    print("Downloading Chroma index from HuggingFace...")
+    snapshot_download(
+        repo_id="cwinkler/bgh-chroma-index",
+        repo_type="dataset",
+        local_dir=PERSIST_DIR,
+    )
+
 # -------- Config (can be overridden via Space "Variables") --------
 PERSIST_DIR = os.getenv("PERSIST_DIR", "./chroma_langchain")     # path to your committed Chroma index
 EMB_MODEL   = os.getenv("EMB_MODEL", "jinaai/jina-embeddings-v3")
